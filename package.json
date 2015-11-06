@@ -1,0 +1,42 @@
+{
+  "name": "arcanist",
+  "version": "0.0.1",
+  "description": "phabricator arcanist in nodejs",
+  "main": "index.js",
+  "bin": {
+    "arc": "index.js"
+  },
+  "files": [
+    "index.js",
+    "README.md",
+    "latest",
+    "install.js"
+  ],
+  "scripts": {
+    "update": "cd arcanist && git pull && cd ../libphutil && git pull && cd ..",
+    "pack": "tar -zcf arcanist-`date '+%Y-%m-%d'`.tar.gz arcanist/ && tar -zcf libphutil-`date '+%Y-%m-%d'`.tar.gz libphutil/",
+    "upload": "deploy-asset *.tar.gz --destDir arc -u cdn -d && date '+%Y-%m-%d' > latest",
+    "build": "rm -rf *.tar.gz && npm run update && npm run pack && npm run upload && rm -rf *.tar.gz",
+    "install": "node install.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hujiang-FE/arcanist.git"
+  },
+  "keywords": [
+    "arcanist",
+    "phabricator",
+    "review",
+    "code"
+  ],
+  "author": "Mora",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Hujiang-FE/arcanist/issues"
+  },
+  "homepage": "https://github.com/Hujiang-FE/arcanist#readme",
+  "dependencies": {
+    "cross-spawn": "^2.0.0",
+    "download": "^4.4.1"
+  }
+}
