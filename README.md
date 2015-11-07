@@ -44,3 +44,11 @@ arc install-certificate http://your_phabricator_site.com
 
 > 更多详情可以查看[英文指导文档](https://phab.enlightenment.org/w/arcanist/)
 
+
+## code review 的个人观点
+
+1. 提交 review 时至少提交给两个人，这样就不至少因为某人太忙而 review 被搁置了
+1. 一个功能就提交一次 review，不要将一大堆代码一股脑的提交上去，尽量将一次 review 的代码最小化
+
+
+
