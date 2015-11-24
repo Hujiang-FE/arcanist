@@ -38,8 +38,8 @@ arc install-certificate http://your_phabricator_site.com
   - 另外编辑面板中也有一个 test plan 选项，国外人一般每个项目都有测试，所以此项是必填的，如果没有测试，我们只需要随便设置一个字段即可，比如设置成 `no` 或 `skip`
 4. 第 2 步操作之后，系统会发送邮件通知 reviewers 去 review 你的代码，你也可以通过 `arc list` 来查看当前 review 的状态
 5. 
-  - 如果 review 没有通过，你需要在原来的基础上修改，修改完并 commit 之后需要执行 `arc diff --update D(id)` 继续 review
-  - 如果 review 通过了，只需要运行 `arc land`， arc 会将你当前分支合并的 master 上，并删除当前分支
+  - 如果 review 没有通过，你需要在原来的基础上修改，修改完并 commit 之后需要执行 `arc diff [last_commit] --update D(id)` 继续 review
+  - 如果 review 通过了，只需要运行 `arc land --onto some_branch`， arc 会将你当前分支合并的 master 上，并删除当前分支
 
 
 > 更多详情可以查看[英文指导文档](https://phab.enlightenment.org/w/arcanist/)
